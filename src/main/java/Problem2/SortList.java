@@ -1,5 +1,10 @@
 package Problem2;
-
+/*
+    Nam Nguyen
+    November 5, 2020
+    CSS 143B
+    Homework 4
+ */
 public class SortList {
     private static final int SENTRY = Integer.MAX_VALUE;
     // DO NOT ADD ANY NEW MEMBER VARIABLE AND MEMBER FUNCTION

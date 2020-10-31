@@ -1,5 +1,10 @@
 package Problem2;
-
+/*
+    Nam Nguyen
+    November 5, 2020
+    CSS 143B
+    Homework 4
+ */
 public class SingleLinkedList {
     private ListNode head;
     private int size;
