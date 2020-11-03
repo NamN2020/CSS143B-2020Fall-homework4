@@ -17,12 +17,12 @@ public class BinarySearch {
         //  lhs + (rhs - lhs) / 2 to avoid OverFlowException
         int mid = lhs + (rhs - lhs) / 2;
 
-        if(target > data[mid]){
+        if(target == data[mid]){
+            return mid;
+        } else if(target > data[mid]){
             return binarySearch(data, target, mid + 1, rhs);
         } else if(target < data[mid]){
             return binarySearch(data, target, lhs, mid - 1);
-        } else if(target == data[mid]){
-            return mid;
         }
 
         return -1;
