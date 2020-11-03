@@ -20,12 +20,12 @@ public class BinarySearch {
         if(target == data[mid]){
             return mid;
         } else if(target > data[mid]){
-            return binarySearch(data, target, mid + 1, rhs);
+            lhs = mid + 1;
         } else if(target < data[mid]){
-            return binarySearch(data, target, lhs, mid - 1);
+            rhs = mid - 1;
         }
 
-        return -1;
+        return binarySearch(data, target, lhs, rhs);
     }
 
     public static int binarySearch(int[] data, int target) {
