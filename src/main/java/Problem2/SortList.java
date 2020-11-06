@@ -24,24 +24,44 @@ public class SortList {
 
     public static ListNode findMidAndBreak(ListNode head) {
         // homework
-        /*
-            Partial credit:
-            My thought process for findMidAndBreak is using recursion to find the depth of the list and put it in a int
-            variable. To find the middle of the list I'd take the depth / 2. I know the idea is to make the last node of
-            the first list and point it to null, but I don't know how to get to that specific node.
-         */
-
         if(head.next == null){
-            return head;
+            return null;
         }
 
-        findMidAndBreak(head.next);
+        int mid = (getCount(head)/ 2);
+
+        for(int i = 1; i < mid; i ++){
+            head = head.next;
+        }
+
+        head.next = null;
 
         return head;
     }
 
+    // https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
+    // get length of linked list
+    public static int getCount(ListNode head){
+        if(head == null){
+            return 0;
+        }
+        return 1 + getCount(head.next);
+    }
+
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
         // homework
-        return null;
+        // base case
+        if(list1.next == null){
+            return null;
+        } else if(list2.next == null){
+            return null;
+        }
+
+        if(list1.val > list2.val){
+            list1 = list1.next;
+        } else if(list1.val < list2.val){
+            list2 = list2.next;
+        }
+        return mergeLists(list1, list2);
     }
 }
