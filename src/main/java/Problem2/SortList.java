@@ -31,9 +31,12 @@ public class SortList {
         ListNode list2Head = head.next;
         int length = getCount(head);
         int mid = length / 2;
+
+        // finding start of second list
         for(int t = 1; t < mid; t ++){
             list2Head = list2Head.next;
         }
+        // finding end of first list
         for(int i = 1; i < mid; i ++){
             head = head.next;
         }
@@ -54,16 +57,18 @@ public class SortList {
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
         // homework
         // base case
-        if(list1.next == null){
-            return null;
-        } else if(list2.next == null){
-            return null;
+        if(list1 == null){
+            return list2;
+        } else if(list2 == null){
+            return list1;
         }
 
         if(list1.val > list2.val){
             list1 = list1.next;
+            return list1;
         } else if(list1.val < list2.val){
             list2 = list2.next;
+            return list2;
         }
         return mergeLists(list1, list2);
     }
