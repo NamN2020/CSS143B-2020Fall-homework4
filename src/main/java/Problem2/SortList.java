@@ -28,15 +28,16 @@ public class SortList {
             return null;
         }
 
-        int mid = (getCount(head)/ 2);
+        ListNode temp = head.next;
+        int length = getCount(head);
+        int mid = length / 2;
 
         for(int i = 1; i < mid; i ++){
             head = head.next;
         }
-
         head.next = null;
 
-        return head;
+        return temp;
     }
 
     // https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
