@@ -1,4 +1,5 @@
 package Problem2;
+
 /*
     Nam Nguyen
     November 5, 2020
@@ -75,5 +76,23 @@ public class SingleLinkedList {
     // reverse the linked list RECURSIVELY
     public void reverse() {
         // homework
+        reverse(head);
+    }
+
+    public static ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        // get last node in list
+        reverse(head.next);
+        // reversing the pointer
+        // if 3 was our current head than head.next.next = head would point the 4 to 3.
+        // 1 -> 2 -> 3 <- 4 -> NULL
+        head.next.next = head;
+        head.next = null;
+
+
+        return head;
     }
 }
