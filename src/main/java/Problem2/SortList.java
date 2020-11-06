@@ -24,14 +24,16 @@ public class SortList {
 
     public static ListNode findMidAndBreak(ListNode head) {
         // homework
-        if(head.next == null){
+        if(head == null || head.next == null){
             return null;
         }
 
         ListNode temp = head.next;
         int length = getCount(head);
         int mid = length / 2;
-
+        for(int t = 1; t < mid; t ++){
+            temp = temp.next;
+        }
         for(int i = 1; i < mid; i ++){
             head = head.next;
         }
