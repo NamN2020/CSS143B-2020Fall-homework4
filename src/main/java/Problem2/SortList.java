@@ -28,18 +28,18 @@ public class SortList {
             return null;
         }
 
-        ListNode temp = head.next;
+        ListNode list2Head = head.next;
         int length = getCount(head);
         int mid = length / 2;
         for(int t = 1; t < mid; t ++){
-            temp = temp.next;
+            list2Head = list2Head.next;
         }
         for(int i = 1; i < mid; i ++){
             head = head.next;
         }
         head.next = null;
 
-        return temp;
+        return list2Head;
     }
 
     // https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
