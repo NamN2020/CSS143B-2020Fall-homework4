@@ -40,9 +40,9 @@ public class Permutation {
             return;
         }
 
+        // I only used this code to understand how the recursion works, I do not want credit for this part.
         // NOT MY CODE
         // https://www.w3resource.com/java-exercises/array/java-array-exercise-68.php
-        // I only used this code to understand how the recursion works, I do not want credit for this part.
         for (int i = position; i < nums.length; i++) {
             int temp = nums[i];
             nums[i] = nums[position];
