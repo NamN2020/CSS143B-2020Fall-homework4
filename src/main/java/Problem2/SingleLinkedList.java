@@ -76,23 +76,24 @@ public class SingleLinkedList {
     // reverse the linked list RECURSIVELY
     public void reverse() {
         // homework
-        reverse(head);
+        head.next = reverse(head.next);
     }
 
-    public static ListNode reverse(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
+    public static ListNode reverse(ListNode node) {
+        if(node == null){
+            return null;
+        }
+        if (node.next == null) {
+            return node;
         }
 
         // get last node in list
-        reverse(head.next);
+        ListNode temp = reverse(node.next);
+
         // reversing the pointer
-        // if 3 was our current head than head.next.next = head would point the 4 to 3.
-        // 1 -> 2 -> 3 <- 4 -> NULL
-        head.next.next = head;
-        head.next = null;
+        node.next.next = node;
+        node.next = null;
 
-
-        return head;
+        return temp;
     }
 }
