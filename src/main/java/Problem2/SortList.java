@@ -70,7 +70,7 @@ public class SortList {
         if (list1.val < list2.val) {
             list1.next = mergeLists(list1.next, list2);
             node = list1;
-        } else if (list2.val < list1.val) {
+        } else {
             list2.next = mergeLists(list1, list2.next);
             node = list2;
         }
