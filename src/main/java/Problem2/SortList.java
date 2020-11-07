@@ -28,17 +28,14 @@ public class SortList {
             return null;
         }
 
+        // list2 head is one step ahead of end of list1
         ListNode list2Head = head.next;
         int length = getCount(head);
         int mid = length / 2;
 
-        // finding start of second list
-        for (int t = 1; t < mid; t++) {
-            list2Head = list2Head.next;
-        }
-        // finding end of first list
         for (int i = 1; i < mid; i++) {
-            head = head.next;
+            head = head.next;           // end of list1
+            list2Head = list2Head.next; // start of list2
         }
         head.next = null;
 
