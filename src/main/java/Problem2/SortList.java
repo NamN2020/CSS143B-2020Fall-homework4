@@ -24,7 +24,7 @@ public class SortList {
 
     public static ListNode findMidAndBreak(ListNode head) {
         // homework
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return null;
         }
 
@@ -33,11 +33,11 @@ public class SortList {
         int mid = length / 2;
 
         // finding start of second list
-        for(int t = 1; t < mid; t ++){
+        for (int t = 1; t < mid; t++) {
             list2Head = list2Head.next;
         }
         // finding end of first list
-        for(int i = 1; i < mid; i ++){
+        for (int i = 1; i < mid; i++) {
             head = head.next;
         }
         head.next = null;
@@ -47,29 +47,34 @@ public class SortList {
 
     // https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
     // get length of linked list
-    public static int getCount(ListNode head){
-        if(head == null){
+    public static int getCount(ListNode node) {
+        if (node == null) {
             return 0;
         }
-        return 1 + getCount(head.next);
+        return 1 + getCount(node.next);
     }
 
     public static ListNode mergeLists(ListNode list1, ListNode list2) {
         // homework
         // base case
-        if(list1 == null){
+        if (list1 == null) {
             return list2;
-        } else if(list2 == null){
+        } else if (list2 == null) {
             return list1;
+        } else if (list1 == null && list2 == null) {
+            return null;
         }
 
-        if(list1.val > list2.val){
-            list1 = list1.next;
-            return list1;
-        } else if(list1.val < list2.val){
-            list2 = list2.next;
-            return list2;
+        ListNode node = new ListNode();
+
+        if (list1.val < list2.val) {
+            list1.next = mergeLists(list1.next, list2);
+            node = list1;
+        } else if (list2.val < list1.val) {
+            list2.next = mergeLists(list1, list2.next);
+            node = list2;
         }
-        return mergeLists(list1, list2);
+
+        return node;
     }
 }
