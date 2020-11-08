@@ -1,17 +1,11 @@
 package Problem1;
 /*
     Nam Nguyen
-    November 5, 2020
+    November 7, 2020
     CSS 143B
     Homework 4
 
     Sources: https://youtu.be/IPWmrjE1_MU, https://www.w3resource.com/java-exercises/array/java-array-exercise-68.php
-
-    I was stuck on this question for a whole day and just couldn't figure it out so I went to look for the answer to
-    try to understand it more. This is my first time doing recursion so it is still pretty confusing, but that's with
-    anything new. The only code I completed myself was the base case. The for-lop with the recursion was from the
-    video. After the video I'm starting to understand recursion better. Also I don't expect any credit for this
-    segment of the homework.
  */
 
 import java.lang.reflect.Array;
@@ -40,8 +34,12 @@ public class Permutation {
             return;
         }
 
-        // I only used this code to understand how the recursion works, I do not want credit for this part.
-        // NOT MY CODE
+        // I only used this code to understand how the recursion works
+        /*
+            My understanding of this for-loop is that it swaps the position with the current i'th
+            index and calls permute recursively, than after the recursion is complete it swaps
+            back the indexes to their original positions.
+         */
         // https://www.w3resource.com/java-exercises/array/java-array-exercise-68.php
         for (int i = position; i < nums.length; i++) {
             int temp = nums[i];
